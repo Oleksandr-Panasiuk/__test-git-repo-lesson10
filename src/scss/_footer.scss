@@ -1,0 +1,18 @@
+@use "abstracts";
+
+.footer {
+  background-color: abstracts.$color-primary;
+  color: abstracts.$color-white;
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  &__title {
+    font-size: 1.31rem;
+    font-weight: abstracts.$font-medium;
+    margin-bottom: 3px;
+  }
+
+  &__description {
+    font-size: 0.8125rem;
+  }
+}

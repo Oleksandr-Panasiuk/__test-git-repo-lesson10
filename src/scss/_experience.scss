@@ -1,0 +1,68 @@
+@use "abstracts";
+
+.experience {
+  background-color: abstracts.$color-primary;
+  color: abstracts.$color-white;
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    column-gap: 2.5vw;
+
+    @include abstracts.respond-to(table) {
+      flex-wrap: wrap;
+      flex-direction: column;
+      row-gap: abstracts.$gap-lg;
+      align-items: flex-start;
+      max-width: abstracts.$container-secondary;
+      margin-inline: auto;
+    }
+  }
+}
+
+.experience-item {
+  display: flex;
+  align-items: center;
+  flex: 0 1 auto;
+  min-width: 0;
+
+  @include abstracts.respond-to(table) {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__value {
+    font-size: calc(14px + 0.4vw);
+    font-weight: abstracts.$font-medium;
+    line-height: 1;
+  }
+
+  &__label {
+    font-size: calc(10px + 0.3vw);
+    line-height: 1.2;
+  }
+
+  &__picture {
+    display: flex;
+    align-items: center;
+    order: -1;
+    margin-right: 1vw;
+    flex-shrink: 0;
+  }
+
+  &__image {
+    display: block;
+    width: calc(25px + 1vw);
+    height: calc(25px + 1vw);
+    object-fit: contain;
+  }
+}
