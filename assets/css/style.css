@@ -1,0 +1,50 @@
+.svg-page{
+  padding:20px;
+  font-family:"Roboto", sans-serif;
+}
+.svg-page__main-title{
+  font-size:2.5rem;
+  font-weight:400;
+  margin-bottom:20px;
+  color:#000000;
+}
+
+.svg-block{
+  margin-bottom:30px;
+}
+.svg-block__title{
+  font-size:1.8rem;
+  font-weight:400;
+  margin-bottom:15px;
+  color:#000000;
+}
+.svg-block svg{
+  display:block;
+}
+
+.svg-animated-circle{
+  -webkit-animation:svgColorChange 3s infinite alternate ease-in-out !important;
+          animation:svgColorChange 3s infinite alternate ease-in-out !important;
+}
+
+@-webkit-keyframes svgColorChange{
+  0%{
+    fill:#ffc107 !important;
+    stroke:#e91e63 !important;
+  }
+  100%{
+    fill:#00bcd4 !important;
+    stroke:#3f51b5 !important;
+  }
+}
+
+@keyframes svgColorChange{
+  0%{
+    fill:#ffc107 !important;
+    stroke:#e91e63 !important;
+  }
+  100%{
+    fill:#00bcd4 !important;
+    stroke:#3f51b5 !important;
+  }
+}

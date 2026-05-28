@@ -1,0 +1,47 @@
+@use "abstracts";
+
+.svg-page {
+  padding: 20px;
+  font-family: abstracts.$font-family;
+
+  &__main-title {
+    font-size: 2.5rem;
+    font-weight: abstracts.$font-normal;
+    margin-bottom: 20px;
+    color: #000000;
+  }
+}
+
+.svg-block {
+  margin-bottom: 30px;
+
+  &__title {
+    font-size: 1.8rem;
+    font-weight: abstracts.$font-normal;
+    margin-bottom: 15px;
+    color: #000000;
+  }
+
+  svg {
+    display: block;
+  }
+}
+
+// Анімація для кола: плавна зміна кольору заливки та рамки
+.svg-animated-circle {
+  fill: #ffc107;
+  stroke: #e91e63;
+  stroke-width: 5px;
+  animation: svgColorChange 3s infinite alternate ease-in-out;
+}
+
+@keyframes svgColorChange {
+  0% {
+    fill: #ffc107;
+    stroke: #e91e63;
+  }
+  100% {
+    fill: #00bcd4;
+    stroke: #3f51b5;
+  }
+}

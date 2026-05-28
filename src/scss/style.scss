@@ -1,7 +1,43 @@
-@use "global";
-@use "header";
-@use "hero";
-@use "experience";
-@use "sections";
-@use "video";
-@use "footer";
+// Базові стилі для сторінки SVG
+.svg-page {
+  padding: 20px;
+  font-family: 'Roboto', sans-serif;
+
+  &__main-title {
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+    color: #000000;
+  }
+}
+
+.svg-block {
+  margin-bottom: 30px;
+
+  &__title {
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 15px;
+    color: #000000;
+  }
+
+  svg {
+    display: block;
+  }
+}
+
+// Плавна CSS-анімація зміни кольору заливки та рамки для кола
+.svg-animated-circle {
+  animation: svgColorChange 3s infinite alternate ease-in-out !important;
+}
+
+@keyframes svgColorChange {
+  0% {
+    fill: #ffc107 !important;
+    stroke: #e91e63 !important;
+  }
+  100% {
+    fill: #00bcd4 !important;
+    stroke: #3f51b5 !important;
+  }
+}
