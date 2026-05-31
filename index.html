@@ -7,52 +7,189 @@
   <link rel="preconnect" href="https://googleapis.com">
   <link rel="preconnect" href="https://gstatic.com" crossorigin>
   <link href="https://googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style/style.css">
-  <title>Мистецтво SVG</title>
+  <!-- ОДИН ЛОКАЛЬНИЙ ШЛЯХ. Весь необхідний Bootstrap Grid вже вшито всередину нього -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Домашня робота з Bootstrap</title>
 </head>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
 
-  <main class="svg-page">
-    <h1 class="svg-page__main-title">Мистецтво SVG: фігури та анімація</h1>
+  <h1 class="visually-hidden">Домашня робота з Bootstrap</h1>
 
-    <!-- 1. Квадрат -->
-    <div class="svg-block">
-      <h2 class="svg-block__title">Квадрат</h2>
-      <svg width="200" height="200" viewBox="0 0 200 200">
-        <rect x="5" y="5" width="190" height="190" fill="#34547a" stroke="#000000" stroke-width="5" />
-      </svg>
+  <!-- HEADER -->
+  <header class="site-header navbar navbar-expand-md navbar-dark py-2 mb-4 shadow-sm text-white">
+    <div class="site-container container">
+      <nav class="main-nav w-100 position-relative">
+        <input type="checkbox" id="navbar-toggle" class="d-none">
+        <label for="navbar-toggle" class="navbar-toggler d-md-none border p-2 text-white rounded mb-2 d-inline-block"
+          style="cursor: pointer;">
+          <span class="navbar-toggler-icon"></span>
+        </label>
+
+        <ul class="menu-level-1 navbar-nav d-flex flex-row gap-3 m-0 p-0 list-unstyled">
+          <li class="nav-item"><a class="nav-link text-white px-2" href="#">Головна</a></li>
+          <li class="nav-item dropdown has-children-hover">
+            <a class="nav-link dropdown-toggle text-white px-2" href="#">Послуги</a>
+            <ul class="menu-level-2 dropdown-menu position-absolute bg-dark border-0">
+              <li><a class="dropdown-item text-white" href="#">Веб-дизайн</a></li>
+              <li><a class="dropdown-item text-white" href="#">Верстка макетів</a></li>
+              <li><a class="dropdown-item text-white" href="#">Оптимізація</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown has-children-hover">
+            <a class="nav-link dropdown-toggle text-white px-2" href="#">Портфоліо ▾</a>
+            <ul class="menu-level-2 dropdown-menu position-absolute bg-dark border-0">
+              <li><a class="dropdown-item text-white" href="#">Сайти-візитки</a></li>
+              <li><a class="dropdown-item text-white" href="#">Інтернет-магазини</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link text-white px-2" href="#">Контакти</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-    <!-- 2. Прямокутник -->
-    <div class="svg-block">
-      <h2 class="svg-block__title">Прямокутник</h2>
-      <svg width="240" height="160" viewBox="0 0 240 160">
-        <rect x="5" y="5" width="230" height="150" fill="#edeef0" stroke="#727272" stroke-width="5" />
-      </svg>
-    </div>
+  <div class="site-container container flex-grow-1">
+    <div class="main-grid row g-4 mb-4">
 
-    <!-- 3. Коло (З вбудованою SVG-анімацією заливки та контуру) -->
-    <div class="svg-block">
-      <h2 class="svg-block__title">Коло (Анімоване)</h2>
-      <svg width="200" height="200" viewBox="0 0 200 200">
-        <circle cx="100" cy="100" r="90" fill="#ffc107" stroke="#e91e63" stroke-width="5">
-          <!-- Анімація зміни кольору заливки -->
-          <animate attributeName="fill" values="#ffc107;#00bcd4;#ffc107" dur="3s" repeatCount="indefinite" />
-          <!-- Анімація зміни кольору контуру -->
-          <animate attributeName="stroke" values="#e91e63;#3f51b5;#e91e63" dur="3s" repeatCount="indefinite" />
-        </circle>
-      </svg>
-    </div>
+      <!-- LEFT -->
+      <aside class="grid-col col-left col-12 col-md-3 col-lg-3">
+        <div class="p-3 bg-white border rounded h-100 shadow-sm">
+          <h2 class="col-title fs-5 pb-2 mb-3 fw-bold">LEFT (Слайдер)</h2>
+          <div class="css-slider position-relative overflow-hidden">
+            <input type="radio" name="slider-group" id="slide-1" checked class="d-none">
+            <input type="radio" name="slider-group" id="slide-2" class="d-none">
+            <input type="radio" name="slider-group" id="slide-3" class="d-none">
+            <input type="radio" name="slider-group" id="slide-4" class="d-none">
 
-    <!-- 4. Еліпс -->
-    <div class="svg-block">
-      <h2 class="svg-block__title">Еліпс</h2>
-      <svg width="260" height="160" viewBox="0 0 260 160">
-        <ellipse cx="130" cy="80" rx="120" ry="70" fill="#727272" stroke="#34547a" stroke-width="5" />
-      </svg>
+            <div class="slides-container">
+              <div class="slide"><img src="img/pexels-1.jpg" class="img-fluid rounded" alt="Slide 1"></div>
+              <div class="slide"><img src="img/pexels-2.jpg" class="img-fluid rounded" alt="Slide 2"></div>
+              <div class="slide"><img src="img/pexels-3.jpg" class="img-fluid rounded" alt="Slide 3"></div>
+              <div class="slide"><img src="img/pexels-4.jpg" class="img-fluid rounded" alt="Slide 4"></div>
+            </div>
+
+            <div class="slide-controls sc1">
+              <label for="slide-4" class="prev shadow-sm">❮</label>
+              <label for="slide-2" class="next shadow-sm">❯</label>
+            </div>
+            <div class="slide-controls sc2">
+              <label for="slide-1" class="prev shadow-sm">❮</label>
+              <label for="slide-3" class="next shadow-sm">❯</label>
+            </div>
+            <div class="slide-controls sc3">
+              <label for="slide-2" class="prev shadow-sm">❮</label>
+              <label for="slide-4" class="next shadow-sm">❯</label>
+            </div>
+            <div class="slide-controls sc4">
+              <label for="slide-3" class="prev shadow-sm">❮</label>
+              <label for="slide-1" class="next shadow-sm">❯</label>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- MAIN -->
+      <main class="grid-col col-main col-12 col-md-6 col-lg-6">
+        <div class="p-3 bg-white border rounded h-100 shadow-sm">
+          <h2 class="col-title fs-5 pb-2 mb-3 fw-bold">MAIN (Акордеон)</h2>
+          <div class="css-accordion">
+
+            <div class="accordion-item border rounded mb-2 overflow-hidden">
+              <input type="checkbox" id="acc-1" class="d-none">
+              <label for="acc-1" class="accordion-header p-3 bg-light d-block fw-medium text-dark m-0"
+                style="cursor: pointer;">Секція 1: Про нас</label>
+              <div class="accordion-content bg-white">
+                <div class="p-3 border-top">
+                  <p class="text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Наша мета —
+                    створювати якісні інтерфейси.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item border rounded mb-2 overflow-hidden">
+              <input type="checkbox" id="acc-2" class="d-none">
+              <label for="acc-2" class="accordion-header p-3 bg-light d-block fw-medium text-dark m-0"
+                style="cursor: pointer;">Секція 2: Наші послуги</label>
+              <div class="accordion-content bg-white">
+                <div class="p-3 border-top">
+                  <p class="text-muted mb-0">Швидкість, валідність, адаптивність під будь-які мобільні пристрої та
+                    екрани від 375px.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item border rounded mb-2 overflow-hidden">
+              <input type="checkbox" id="acc-3" class="d-none">
+              <label for="acc-3" class="accordion-header p-3 bg-light d-block fw-medium text-dark m-0"
+                style="cursor: pointer;">Секція 3: Технології</label>
+              <div class="accordion-content bg-white">
+                <div class="p-3 border-top">
+                  <p class="text-muted mb-0">Використовуємо HTML5, семантичную розмітку, препроцесори Sass/SCSS та
+                    систему компонентів.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </main>
+
+      <!-- RIGHT -->
+      <aside class="grid-col col-right col-12 col-md-3 col-lg-3">
+        <div class="p-3 bg-white border rounded h-100 shadow-sm">
+          <h2 class="col-title fs-5 pb-2 mb-3 fw-bold">RIGHT (Форма)</h2>
+          <form class="feedback-form" action="#" method="POST">
+
+            <div class="form-group mb-2">
+              <label for="user-name" class="form-label small mb-1 fw-medium text-dark">Ім'я</label>
+              <input type="text" id="user-name" class="form-control form-control-sm" required placeholder="Ваше ім'я">
+            </div>
+
+            <div class="form-group mb-2">
+              <label for="user-email" class="form-label small mb-1 fw-medium text-dark">Email:</label>
+              <input type="email" id="user-email" class="form-control form-control-sm" required
+                placeholder="example@mail.com">
+            </div>
+
+            <div class="form-group mb-2">
+              <label for="user-phone" class="form-label small mb-1 fw-medium text-dark">Телефон:</label>
+              <input type="tel" id="user-phone" class="form-control form-control-sm" placeholder="+380...">
+            </div>
+
+            <div class="form-group mb-2">
+              <label for="subject" class="form-label small mb-1 fw-medium text-dark">Тема звернення:</label>
+              <select id="subject" class="form-select form-select-sm">
+                <option value="cooperation">Співпраця</option>
+                <option value="support">Техпідтримка</option>
+                <option value="other">Інше</option>
+              </select>
+            </div>
+
+            <div class="form-group mb-3">
+              <label for="message" class="form-label small mb-1 fw-medium text-dark">Повідомлення:</label>
+              <textarea id="message" class="form-control form-control-sm" rows="3"
+                placeholder="Текст вашого листа..."></textarea>
+            </div>
+
+            <div class="form-buttons d-flex gap-2">
+              <button type="submit" class="btn btn-primary btn-sm flex-grow-1 fw-medium text-white">Надіслати</button>
+              <button type="reset" class="btn btn-secondary btn-sm fw-medium text-white">Очистити</button>
+            </div>
+
+          </form>
+        </div>
+      </aside>
+
     </div>
-  </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer bg-dark text-white text-center py-3 mt-auto">
+    <div class="site-container container">
+      <p class="mb-0 small">&copy; 2026 Практична робота. Всі права захищені. Валідна адаптивна сітка Bootstrap 5.3.</p>
+    </div>
+  </footer>
 
 </body>
 

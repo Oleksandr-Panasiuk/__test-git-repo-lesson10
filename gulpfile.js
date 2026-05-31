@@ -54,10 +54,8 @@ const PLUGINS = [
 
 function compileScss() {
   return src(PATH.scssRootFile)
-    .pipe(sassCompiler().on('error', sassCompiler.logError))
-    .pipe(postcss(PLUGINS))
-    .pipe(replace(SEARCH_IMAGE_REGEXP, REPLACEMENT_IMAGE_PATH))
-    .pipe(dest(PATH.cssFolder))
+    .pipe(sassCompiler.sync().on('error', sassCompiler.logError))
+    .pipe(dest(PATH.cssFolder)) // Прямий запис чистого CSS вassets/css/ без фільтрації
     .pipe(browserSync.stream())
 }
 
@@ -203,7 +201,7 @@ function createStructure() {
 export { compileScss, compileScssMin, compileScssDev, compilePug, comb, serverInit, sync, watchFiles, createStructure }
 
 // Композитні задачі
-export const scss = series(comb, compileScss, compileScssMin)
+export const scss = series(compileScss)
 export const min = compileScssMin
 export const dev = compileScssDev
 export const combTask = series(comb, compileScss, compileScssMin)
